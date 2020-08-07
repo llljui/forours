@@ -52,7 +52,12 @@ export default {
 	let hlist = [];
 	// 这里有三个状态  prerender，visible 和 hidden 
 	let pageVisibleStatus = document.visibilityState; 
-	
+	self.down = setInterval(()=>{
+		for(let x = 0;x<30;x++){
+			hlist.push({w:random(0,10),l:random(0,1200),s:1,top:random(-20,-380)})
+		}
+		self.hlist = hlist;
+	},3500);
 	// 监听页面状态
 	document.addEventListener('visibilitychange', function() {
 	  // 页面状态变化为不可见时触发 
